@@ -1,0 +1,2 @@
+# local unix user to use whenever root privileges are not required
+UNIX_USERNAME=hacker
