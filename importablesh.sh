@@ -1,6 +1,7 @@
 # to be imported
 
-# This file is copied from https://github.com/wipu/importablesh/importablesh.sh
+# This is the bootstrapper of importablesh
+# The newest version is available at https://raw.githubusercontent.com/wipu/importablesh/master/importablesh.sh
 # Released under the MIT license
 
 set -euo pipefail
