@@ -1,6 +1,7 @@
 import log
 import die
 import userconf-username
+import xterm-title
 
 run-test() {
     local SCRIPT=$1
@@ -10,6 +11,7 @@ run-test() {
     log "Running test $SCRIPT"
     log "============"
     log
+    xterm-title "Running test $SCRIPT"
     "$IMPORTABLESH/scripts/runtest.sh" "$SCRIPT" "$USER_TO_DROP_TO" && log "OK: $SCRIPT" || die "FAILURE: $SCRIPT"
 }
 
