@@ -23,5 +23,6 @@ run-test-as-user userconf.sh
 run-test-as-user will-consume.sh
 run-test-as-user download.sh
 run-test-as-user jsonedit.sh
+run-test-as-user git-clone.sh
 
 yippielog "All tests passed :D"
