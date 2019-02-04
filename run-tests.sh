@@ -25,5 +25,7 @@ run-test-as-user download.sh
 run-test-as-user jsonedit.sh
 run-test-as-user git-clone.sh
 run-test-as-user is-done.sh
+run-test-as-user sources-in-git-workingcopy.sh
+run-test-as-user is-build-artifact-dirty.sh
 
 yippielog "All tests passed :D"
