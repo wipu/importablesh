@@ -1,6 +1,3 @@
 userconf lastfile var name incorrect
 
-userconf doesn't exist => still tries to check property => still continues (set -eu failure)
-  * will-consume function has: "|| true", maybe this hides the exit?
-
 checksum fails (e.g. just some crap as expected sum) => done touched => never retries! (set -eu failure)
