@@ -2,8 +2,8 @@ import log
 
 will-consume() {
     local NAME=$1
-    [ ${!NAME:-x} == "x" ] && {
+    set | grep -q "^$NAME=" || {
 	log "Producing $NAME"
 	produce-$NAME
-    } || true
+    }
 }

@@ -24,3 +24,16 @@ produce-X() {
 }
 
 will-consume X
+
+test-start "failure in produce causes failure in call to will-consume"
+
+produce-FAILURE() {
+    log "Failing on purpose"
+    # we are setting the variable, so if the caller of will-consume ignores
+    # the exit value, they will later think production is up-to-date
+    # so it's important to have set -eu effective always
+    export FAILURE=called
+    false
+}
+
+will-consume FAILURE && die "Didn't fail!" || log "Failed as expected"
