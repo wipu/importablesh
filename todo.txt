@@ -1,3 +1,7 @@
 userconf lastfile var name incorrect
 
 checksum fails (e.g. just some crap as expected sum) => done touched => never retries! (set -eu failure)
+
+maven recreates target => its parent is touched => it makes artifact in
+previously built subproject dirty always => make function that touches the
+artifact after it has called maven
