@@ -14,12 +14,22 @@ IMPORTABLESH_USERDIR=$(readlink -f "$(dirname "$BASH_SOURCE")")
 export CACHED=$IMPORTABLESH_USERDIR/cached
 mkdir -p "$CACHED"
 
+get-url-to() {
+    local FROM=$1
+    local TO=$2
+    type wget >/dev/null && {
+	wget "$FROM" -O "$TO"
+    } || {
+	curl -L "$FROM" -o "$TO"
+    }
+}
+
 ensure-importablesh() {
     local DEST=$CACHED/importablesh-$IMPORTABLESH_VER
     export IMPORTABLESH=$DEST
     [ -e "$DEST" ] && return
 
-    wget "$IMPORTABLESH_ZIP_URL" -O "$DEST".zip
+    get-url-to "$IMPORTABLESH_ZIP_URL" "$DEST".zip
     unzip "$DEST".zip -d "$CACHED"
 }
 

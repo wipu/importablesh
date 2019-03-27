@@ -8,6 +8,8 @@ init-testarea
 SRC=$TESTAREA/src
 echo "file content" > "$SRC"
 
+type wget || die "This test assumes we have wget installed."
+
 wget() {
     log "Mock downloading $1 to $(pwd)"
     cp "$1" ./
