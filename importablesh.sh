@@ -17,7 +17,7 @@ mkdir -p "$CACHED"
 get-url-to() {
     local FROM=$1
     local TO=$2
-    type wget >/dev/null && {
+    type wget &>/dev/null && {
 	wget "$FROM" -O "$TO"
     } || {
 	curl -L "$FROM" -o "$TO"
