@@ -20,15 +20,3 @@ download() {
         return 1
     }
 }
-
-# This is duplicated from importablesh.sh. No reuse is attempted, to
-# keep the bootstrap simple.
-get-url-to() {
-    local FROM=$1
-    local TO=$2
-    type wget &>/dev/null && {
-	wget "$FROM" -O "$TO"
-    } || {
-	curl -L "$FROM" -o "$TO"
-    }
-}
