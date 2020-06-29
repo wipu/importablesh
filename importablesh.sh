@@ -6,7 +6,7 @@
 
 set -euo pipefail
 
-IMPORTABLESH_VER=cd56eb51f364035da302d0b9c08dda75cf0011df
+IMPORTABLESH_VER=98af6c2d9e6f90327f13e49d2f8d086564253720
 IMPORTABLESH_ZIP_URL=https://github.com/wipu/importablesh/archive/$IMPORTABLESH_VER.zip
 
 IMPORTABLESH_USERDIR=$(readlink -f "$(dirname "$BASH_SOURCE")")
