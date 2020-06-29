@@ -1,5 +1,5 @@
 printlog() {
-  echo "- $@" >> /dev/stderr
+  echo "- $@" >&2
 }
 
 log() {
@@ -29,5 +29,5 @@ yippielog() {
 }
 
 logcolor() {
-  if [ -t 2 ]; then printf "\033[${1}m" > /dev/stderr; fi
+  if [ -t 2 ]; then printf "\033[${1}m" >&2; fi
 }
