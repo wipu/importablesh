@@ -5,8 +5,23 @@ import runtest
 
 init-testarea
 
+# This is duplicated from importablesh.sh, because it is not called
+# when running these tests.
+# No reuse is attempted, to keep the bootstrap simple.
+get-url-to() {
+    local FROM=$1
+    local TO=$2
+    type wget &>/dev/null && {
+	wget "$FROM" -O "$TO"
+    } || {
+	curl -L "$FROM" -o "$TO"
+    }
+}
+
 SRC=$TESTAREA/src
 echo "file content" > "$SRC"
+
+type wget || die "This test assumes we have wget installed."
 
 wget() {
     log "Mock downloading $1 to $(pwd)"

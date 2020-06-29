@@ -11,7 +11,7 @@ download() {
     [ -e "$NAME" ] || {
         log "Downloading $SRC"
         require-user
-        wget "$SRC"
+        get-url-to "$SRC" "$NAME"
     }
     echo "$SUM  $NAME" | sha256sum -c || {
         local FAILED=$DEST.failed
